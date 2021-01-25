@@ -7,7 +7,7 @@ $(document).ready(function () {
     $('.savBtn').on('click', function(event){
         console.log(event.target);
         // grab values
-        var input = $(this).sibling('.description').val();
+        var input = $(this).siblings('.description').val();
         var blockTime = $(this).parent().attr('id');
 
         //setvalues in local storage
