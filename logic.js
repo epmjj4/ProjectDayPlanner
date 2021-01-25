@@ -4,13 +4,15 @@ $(document).ready(function () {
 
     $("#currentDay").text(new Date());
 
-    $('.saveBtn').on('click', function(){
+    $('.savBtn').on('click', function(event){
+        console.log(event.target);
         // grab values
         var input = $(this).sibling('.description').val();
         var blockTime = $(this).parent().attr('id');
 
-        // setvalues in local storage
+        //setvalues in local storage
         localStorage.setItem(blockTime, input)
+        
 
     });
 
@@ -40,7 +42,10 @@ $('.time-block').each(function(){
 })
 }
 hourColorizer();
+
 // grabbing data from local store
+    
+
 $("#9-hour.description").val(localStorage.getItem('9-hour'));
 $("#10-hour.description").val(localStorage.getItem('10-hour'));
 $("#11-hour.description").val(localStorage.getItem('11-hour'));
